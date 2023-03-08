@@ -733,7 +733,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #e8ecf5;
+  color: #B5EAEB;
   font-size: 26px;
 }
 
@@ -765,11 +765,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #5777ba;
+  border: 1px solid #468C89;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5777ba;
+  background-color: #468C89;
 }
 
 /*--------------------------------------------------------------
@@ -795,7 +795,7 @@ section {
 
 .pricing h4 {
   font-size: 46px;
-  color: #5777ba;
+  color: 468C89;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 25px;
@@ -820,7 +820,7 @@ section {
 }
 
 .pricing ul i {
-  color: #5777ba;
+  color:468C89;
   font-size: 18px;
   padding-right: 4px;
 }
