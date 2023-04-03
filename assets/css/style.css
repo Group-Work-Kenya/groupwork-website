@@ -1099,6 +1099,112 @@ section {
   }
 }
 
+/* The new issues form */
+
+.contact .php-issues-form {
+  width: 100%;
+}
+
+.contact .php-issues-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-issues-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .php-issues-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-issues-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-issues-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-issues-form label {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 5px;
+  color: #8a8c95;
+}
+
+.contact .php-issues-form input,
+.contact .php-issues-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  ;
+}
+
+#issue-input {
+    height:100px;
+}
+
+.contact .php-issues-form input:focus,
+.contact .php-issues-form textarea:focus {
+  border-color: #5777ba;
+}
+
+.contact .php-issues-form input {
+  padding: 10px 15px;
+}
+
+.contact .php-issues-form textarea {
+  padding: 12px 15px;
+}
+
+.contact .php-issues-form button[type=submit] {
+  background: #fff;
+  border: 2px solid #5777ba;
+  padding: 10px 24px;
+  color: #5777ba;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-top: 5px;
+}
+
+.contact .php-issues-form button[type=submit]:hover {
+  background: #5777ba;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .contact .php-issues-form {
+    padding: 30px 15px 15px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact .php-issues-form {
+    padding: 15px 0 0 0;
+  }
+}
+
 @-webkit-keyframes animate-loading {
   0% {
     transform: rotate(0deg);

@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  let forms = document.querySelectorAll('.php-email-form');
+  let forms = document.querySelectorAll('.php-issues-form');
     console.log("FORMs", forms)
 
   forms.forEach( function(e) {
@@ -15,18 +15,17 @@
 
         let thisForm = this;
         let name = forms[0][0].value
-        let phone_number = forms[0][1].value
-        let email = forms[0][2].value
+        let email = forms[0][1].value
+        let issue = forms[0][2].value
         let data={
             name:name,
             email:email,
-            phone_number:phone_number,
-            status:"Pending"
+            issue:issue,
         }
-      
 
       let action = thisForm.getAttribute('action');
       let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
+      
       
       if( ! action ) {
         displayError(thisForm, 'The form action property is not set!')
@@ -46,7 +45,7 @@
               grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
               .then(token => {
                 formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, data);
+                php_issues_form_submit(thisForm, action, data);
               })
             } catch(error) {
               displayError(thisForm, error)
@@ -56,18 +55,18 @@
           displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
         }
       } else {
-        php_email_form_submit(thisForm, action, data);
+        php_issues_form_submit(thisForm, action, data);
       }
     });
   });
 
-  function php_email_form_submit(thisForm, action, formData) {
+  function php_issues_form_submit(thisForm, action, formData) {
         
       let data=JSON.parse(JSON.stringify(formData))
        console.log("FORM DATA SUBMIT", data)
 
       
-    const url= "https://tusomekenya.herokuapp.com/insertTesterDetails"
+    const url= "https://tusomekenya.herokuapp.com/insertIssue"
     fetch(url, {
       method: 'POST',
       body: JSON.stringify(data),
@@ -80,7 +79,8 @@
     .then(data => {
        
         const {detail}=data
-        thisForm.querySelector('.loading').classList.remove('d-block');
+        
+      thisForm.querySelector('.loading').classList.remove('d-block');
       if (detail == 'success') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
